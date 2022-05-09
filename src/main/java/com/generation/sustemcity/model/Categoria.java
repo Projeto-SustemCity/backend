@@ -1,13 +1,19 @@
 package com.generation.sustemcity.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 
 @Entity
@@ -16,7 +22,7 @@ public class Categoria {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long ID;
+	private Long id;
 	
 	@NotBlank(message = "Obrigatório")
 	@Size (min=5, max=100, message="o mínimo 5 e no máximo 100 caracteres")
@@ -25,13 +31,27 @@ public class Categoria {
 	@NotNull (message = "Obrigatório")
 	@Size (min=5, max=1000, message="o mínimo 5 e no máximo 1000 caracteres")
 	private String descricao;
+	
+	@OneToMany(mappedBy = "categoria", cascade = CascadeType.REMOVE)
+    @JsonIgnoreProperties("categoria")
+    private List<Produto> produto;
+	
+	
 
-	public Long getID() {
-		return ID;
+	public List<Produto> getProduto() {
+		return produto;
 	}
 
-	public void setID(Long iD) {
-		ID = iD;
+	public void setProduto(List<Produto> produto) {
+		this.produto = produto;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getCategoria() {
