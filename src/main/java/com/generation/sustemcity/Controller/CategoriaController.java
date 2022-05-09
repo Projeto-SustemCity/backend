@@ -56,7 +56,7 @@ public class CategoriaController {
 	
 	@PutMapping
     public ResponseEntity <Categoria> putCategoria(@Valid @RequestBody Categoria categoria){
-        return categoriaRepository.findById(categoria.getID())
+        return categoriaRepository.findById(categoria.getId())
                 .map(resposta -> ResponseEntity.ok().body(categoriaRepository.save(categoria)))
                 .orElse(ResponseEntity.notFound().build());
 	
