@@ -34,7 +34,7 @@ public class Produto {
 	@Size(min=5, message = "No mínimo 5 caractéres")
 	private String descricao;
 	
-	@NotNull(message = "Obrigatório")
+	
 	private String foto;
 	
 	@NotNull(message = "Obrigatório")
