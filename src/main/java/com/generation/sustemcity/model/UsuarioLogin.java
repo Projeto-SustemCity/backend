@@ -1,35 +1,25 @@
 package com.generation.sustemcity.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
-@Entity
-@Table (name = "tb_usuario")
-public class Usuario {
+public class UsuarioLogin {
+
 	
-	@Id
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private Long id; 
 	
-	@NotBlank (message = "Obrigatório")
+
 	private String nome;
 	
-	@NotNull (message = "Obrigatório")
+
 	private String usuario;
 	
-	@NotNull (message = "Obrigatório")
+	
 	private String foto;
 	
-	@NotNull (message = "Obrigatório")
-	@Size (min = 8,message = "O minimo de caracteres deverá ser 8")
-	private String senha;
 
+	private String senha;
+	
+	
+	private String token;
 	
 	
 
@@ -72,10 +62,13 @@ public class Usuario {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	
-	
-	
 
+	public String getToken() {
+		return token;
+	}
 
+	public void setToken(String token) {
+		this.token = token;
+	}
 
 }
