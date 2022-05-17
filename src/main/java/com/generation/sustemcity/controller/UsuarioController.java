@@ -1,4 +1,4 @@
-package com.generation.sustemcity.Controller;
+package com.generation.sustemcity.controller;
 
 import java.util.List;
 import java.util.Optional;

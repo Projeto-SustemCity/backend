@@ -1,4 +1,4 @@
-package com.generation.sustemcity.Controller;
+package com.generation.sustemcity.controller;
 
 import java.util.List;
 
@@ -22,7 +22,7 @@ import com.generation.sustemcity.repository.CategoriaRepository;
 import com.generation.sustemcity.repository.ProdutoRepository;
 
 @RestController
-@RequestMapping("/produto")
+@RequestMapping("/produtos")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class ProdutoController {
 	
@@ -32,8 +32,8 @@ public class ProdutoController {
 	@Autowired
 	private CategoriaRepository categoriaRepository;
 	
-	@GetMapping
-	public ResponseEntity<List<Produto>>getById(){
+	@GetMapping ("/all")
+	public ResponseEntity<List<Produto>>getAll(){
 		return ResponseEntity.ok(produtoRepository.findAll());
 	}
 	@GetMapping("/{id}")
