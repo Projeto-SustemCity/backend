@@ -32,7 +32,11 @@ public class ProdutoController {
 	@Autowired
 	private CategoriaRepository categoriaRepository;
 	
+<<<<<<< HEAD:src/main/java/com/generation/sustemcity/controller/ProdutoController.java
 	@GetMapping ("/all")
+=======
+	@GetMapping("/all")
+>>>>>>> d86e34bf5eb42a5d7d4e6731fbeb3485877bcccd:src/main/java/com/generation/sustemcity/Controller/ProdutoController.java
 	public ResponseEntity<List<Produto>>getAll(){
 		return ResponseEntity.ok(produtoRepository.findAll());
 	}

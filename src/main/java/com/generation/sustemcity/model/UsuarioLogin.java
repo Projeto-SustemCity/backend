@@ -21,7 +21,7 @@ public class UsuarioLogin {
 	
 	private String token;
 	
-	
+	private String tipoUsuario;
 
 	public Long getId() {
 		return id;
@@ -71,4 +71,12 @@ public class UsuarioLogin {
 		this.token = token;
 	}
 
+	public String getTipoUsuario() {
+		return tipoUsuario;
+	}
+
+	public void setTipoUsuario(String tipoUsuario) {
+		this.tipoUsuario = tipoUsuario;
+	}
+	
 }

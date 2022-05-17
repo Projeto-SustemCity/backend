@@ -34,9 +34,17 @@ public class Usuario {
 	@NotNull (message = "Obrigatório")
 	@Size (min = 8,message = "O minimo de caracteres deverá ser 8")
 	private String senha;
+	
+	@NotNull(message = "Identifique qual tipo de usuário se enquadra")
+	private String tipoUsuario;
 
-	
-	
+	public String getTipoUsuario() {
+		return tipoUsuario;
+	}
+
+	public void setTipoUsuario(String tipoUsuario) {
+		this.tipoUsuario = tipoUsuario;
+	}
 
 	public Long getId() {
 		return id;
@@ -77,10 +85,5 @@ public class Usuario {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	
-	
-	
-
-
 
 }
